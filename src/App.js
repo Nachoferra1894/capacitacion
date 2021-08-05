@@ -1,13 +1,11 @@
 import './App.css';
 import {HashRouter,Switch,Route} from 'react-router-dom'
-import Home from './pages/Home.js';
-import MainNavbar from './components/MainNavbar';
+import Home from './pages/Home/Home.js';
 
 const App = () => {
   return (
     <div className="App">
       <HashRouter>
-        <MainNavbar/>
         <Switch>
           <Route exact path="/">
             <Home/>

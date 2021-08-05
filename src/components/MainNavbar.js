@@ -8,7 +8,8 @@ import InputBase from '@material-ui/core/InputBase';
 import { alpha, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '../icons/Search';
 import Logo from '../img/Logo_hor.png'
-import { useState } from 'react';
+import MiniLogo from '../img/II.png'
+import { useState ,useLayoutEffect} from 'react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      width: '12ch',
+      width: '15ch',
       '&:focus': {
         width: '20ch',
       },
@@ -70,29 +71,47 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MainNavbar = () => {
+const MainNavbar = (props) => {
+  const {
+    handleSearch
+  } = props
+
   const classes = useStyles();
-  const [search, setSearch] = useState("")
+
+  const [width] = useWindowSize();
+
+  function useWindowSize() {
+      const [size, setSize] = useState([0, 0]);
+      useLayoutEffect(() => {
+          function updateSize() {
+          setSize([window.innerWidth, window.innerHeight]);
+          }
+          window.addEventListener('resize', updateSize);
+          updateSize();
+          return () => window.removeEventListener('resize', updateSize);
+      }, []);
+      return size;
+  }
 
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className={classes.bar}>
             <Link to='/'>
-              <img height="40px" width="auto" src={Logo}/>
+              <img height="40px" width="auto" style={{marginRight: '8px'}} src={width>600 ? Logo:MiniLogo}/>
             </Link>
             <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search…"
+              placeholder="Search by name…"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
-              onChange={e=>setSearch(e.target.value)}
+              onChange={e=>handleSearch(e.target.value)}
             />
           </div>
         </Toolbar>
