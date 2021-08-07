@@ -101,19 +101,23 @@ const MainNavbar = (props) => {
               <img height="40px" width="auto" style={{marginRight: '8px'}} src={width>600 ? Logo:MiniLogo}/>
             </Link>
             <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
+            { handleSearch && 
+            <>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
+              <InputBase
+                placeholder="Search by name…"
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+                inputProps={{ 'aria-label': 'search' }}
+                onChange={e=>handleSearch(e.target.value)}
+              />
+            </>
+            }
             </div>
-            <InputBase
-              placeholder="Search by name…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-              onChange={e=>handleSearch(e.target.value)}
-            />
-          </div>
         </Toolbar>
       </AppBar>
     </div>

@@ -20,7 +20,7 @@ export const slice = createSlice({
 })
 
 export const addCivilizations = () => async (dispatch) => {
-  const data = civilizationApi.getCivilizations()
+  const data = await civilizationApi.getCivilizations()
   console.log(data)
 };
 

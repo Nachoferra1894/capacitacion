@@ -9,3 +9,12 @@
     align-items: flex-start;
     margin-left: 5%;
 }
+.armycard-link{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+.armycard-link:hover{
+    color: blue;
+    text-decoration: none;
+}
