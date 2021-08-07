@@ -4,14 +4,18 @@ import ArmyCard from '../../components/armyCard/ArmyCard'
 import { useEffect,useState } from 'react'
 import { civilizationApi } from '../../api/civilizationApi'
 import MainNavbar from '../../components/MainNavbar'
+import { useSelector, useDispatch } from 'react-redux'
+import {addCivilizations} from '../../redux/slices/civilizations'
 
 const Home = () => {
     const [civilizations, setCivilizations] = useState([])
     const [showCivilizations, setShowCivilizations] = useState([])
     const [search, setSearch] = useState("")
+    const dispatch = useDispatch()
 
     useEffect(()=>{
         setCivilizations(["1","2","3","4","5","6"])
+        dispatch(addCivilizations())
     },[])
 
     useEffect(()=>{
@@ -20,7 +24,6 @@ const Home = () => {
 
     useEffect(()=>{
         search!=="" ? setShowCivilizations(civilizations.filter(x=>x.includes(search))):setShowCivilizations(civilizations)
-        console.log(search,civilizations)
     },[search])
 
     const handleChangeSearch = (value) =>{

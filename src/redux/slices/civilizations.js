@@ -1,12 +1,16 @@
 
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit'
-import { fetchArticle } from '../articles/articlesSlice'
+import { civilizationApi } from '../../api/civilizationApi';
 
 const civilizations = createEntityAdapter()
 
+const initialState = {
+  civilizations : [],
+}
+
 export const slice = createSlice({
   name: 'civilizations',
-  initialState: civilizations.getInitialState(),
+  initialState,
   reducers: {
     addCivilization(state , action ) {
         const newEvent = action.payload;
@@ -15,12 +19,10 @@ export const slice = createSlice({
   },
 })
 
-
-export const addCivilizations = (newEvent ) => async (dispatch) => {
-	dispatch(slice.actions.addCivilization(newEvent));
+export const addCivilizations = () => async (dispatch) => {
+  const data = civilizationApi.getCivilizations()
+  console.log(data)
 };
 
-
-const reducer = slice.reducer
-export default reducer
+export default slice.reducer
 
