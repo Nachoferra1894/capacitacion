@@ -13,9 +13,10 @@ const Home = () => {
     const [search, setSearch] = useState("")
     const dispatch = useDispatch()
 
-    useEffect(()=>{
-        setCivilizations(["1","2","3","4","5","6"])
-        dispatch(addCivilizations())
+    useEffect(async ()=>{
+        const data = await civilizationApi.getCivilizations()
+        dispatch(addCivilizations(data.civilizations))
+        setCivilizations(data.civilizations)
     },[])
 
     useEffect(()=>{
@@ -23,7 +24,7 @@ const Home = () => {
     },[civilizations])
 
     useEffect(()=>{
-        search!=="" ? setShowCivilizations(civilizations.filter(x=>x.includes(search))):setShowCivilizations(civilizations)
+        search!=="" ? setShowCivilizations(civilizations.filter(x=>x.name.toLowerCase().includes(search.toLowerCase()))):setShowCivilizations(civilizations)
     },[search])
 
     const handleChangeSearch = (value) =>{
@@ -35,8 +36,8 @@ const Home = () => {
             <MainNavbar handleSearch={handleChangeSearch}/>
             <div className="home-div-all">
                 <div className="home-div-cards">
-                    {showCivilizations.map((item,index)=>
-                        <ArmyCard name={item}/>
+                    {showCivilizations?.map((item,index)=>
+                        <ArmyCard item={item}/>
                     )}
                 </div>
             </div>

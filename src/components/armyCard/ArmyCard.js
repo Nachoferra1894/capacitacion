@@ -12,15 +12,15 @@ import { Link } from 'react-router-dom';
 const ArmyCard = (props) => {
 
   const {
-    name
+    item
   } = props
 
   return (
     <Card className="armycard-card">
       <CardContent className="armycard-content">
-        <Link to={`/civilization/${name}`}>
+        <Link to={`/civilization/${item.name}`}>
           <Typography className="armycard-link"  variant='h3'>
-              {name}
+              {item.name}
           </Typography>
         </Link>
       </CardContent>

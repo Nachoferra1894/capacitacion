@@ -19,9 +19,10 @@ export const slice = createSlice({
   },
 })
 
-export const addCivilizations = () => async (dispatch) => {
-  const data = await civilizationApi.getCivilizations()
-  console.log(data)
+export const addCivilizations = (civilizations) => async (dispatch) => {
+  civilizations.map((item,index)=>{
+      dispatch(slice.actions.addCivilization(item))
+  })
 };
 
 export default slice.reducer
