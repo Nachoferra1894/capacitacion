@@ -10,12 +10,13 @@ export const webApi = settings.webApi;
 export let token = localStorage["token"];
 let tokenTimestamp = localStorage["token-ts"] && parseInt(localStorage["token-ts"]);
 let refreshingToken = false;
+const webUrl = "https://age-of-empires-2-api.herokuapp.com/api/v1/"
 
 const _request = (url, method, data, config = {}) => {
     refreshToken();
     const headers = {...config.headers, Authorization: "Bearer " + token};
     if (config.noAuth || !token) delete headers.Authorization;
-    return httpClient({url, method, data, headers}).then((res) => {
+    return httpClient({url: (webUrl+url), method, data, headers}).then((res) => {
         if(res.status === 200 || res.status === 201 || res.status === 204) return res.data;
         else throw (res.data);
     }).catch(errorResponse => {

@@ -1,0 +1,22 @@
+.civilizationpage-card{
+    width: 50vw;
+}
+.civilizationpage-media{
+    height: 140;
+    text-align: left;
+}
+.civilizationpage-box-subtitles{
+    text-align: left;
+    margin-top: '2%';
+}
+.civilizationpage-cardactions{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.civilizationpage-icon{
+    margin-left: 2%;
+}
+.civilizationpage-icon.true{
+    transform: rotate(90deg);
+}

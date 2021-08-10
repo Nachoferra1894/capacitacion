@@ -14,9 +14,14 @@ const Home = () => {
     const dispatch = useDispatch()
 
     useEffect(async ()=>{
-        const data = await civilizationApi.getCivilizations()
-        dispatch(addCivilizations(data.civilizations))
-        setCivilizations(data.civilizations)
+        try {
+            const data = await civilizationApi.getCivilizations()
+            dispatch(addCivilizations(data.civilizations))
+            setCivilizations(data.civilizations)
+        }
+        catch (err){
+            console.log(err)
+        }
     },[])
 
     useEffect(()=>{

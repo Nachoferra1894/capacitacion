@@ -2,7 +2,10 @@ import { get, post } from '../utils/httpUtils';
 
 class CivilizationApi {
     getCivilizations() {
-        return get('https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations')
+        return get('civilizations')
+    }
+    getCivilizationById(id) {
+        return get(`civilization/${id}`)
     }
 }
  
