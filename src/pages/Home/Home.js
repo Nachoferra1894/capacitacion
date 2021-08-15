@@ -61,7 +61,7 @@ const Home = () => {
                             )
                             :
                             <div style={{marginTop: '5%'}}>
-                                <Typography variant='h3'>Couldn't find any civilizations</Typography>
+                                <Typography color="secondary" variant='h4'>Couldn't find any civilizations</Typography>
                             </div>
                     }
                     </div>

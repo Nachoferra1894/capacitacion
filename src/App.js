@@ -1,7 +1,7 @@
 import './App.css';
 import {BrowserRouter,Switch,Route} from 'react-router-dom'
 import Home from './pages/Home/Home.js';
-import CivilizationPage from './components/civilization/CivilizationPage';
+import CivilizationPage from './pages/civilizationPage/CivilizationPage';
 
 const App = () => {
   return (
