@@ -94,7 +94,7 @@ const MainNavbar = (props) => {
       <AppBar position="static">
         <Toolbar className={classes.bar}>
             <Link to='/'>
-              <img height="40px" width="auto" style={{marginRight: '8px'}} src={width>600 ? Logo:MiniLogo}/>
+              <img alt="Age of empires logo" height="40px" width="auto" style={{marginRight: '8px'}} src={width>600 ? Logo:MiniLogo}/>
             </Link>
             <div className={classes.search}>
             { handleSearch && 

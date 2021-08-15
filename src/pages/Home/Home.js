@@ -1,10 +1,9 @@
 import './Home.scss'
-import Background from '../../img/Back.jpeg'
 import ArmyCard from '../../components/armyCard/ArmyCard'
 import { useEffect,useState } from 'react'
 import { civilizationApi } from '../../api/civilizationApi'
 import MainNavbar from '../../components/mainNavbar/MainNavbar'
-import { useSelector, useDispatch } from 'react-redux'
+import {useDispatch } from 'react-redux'
 import {addCivilizations} from '../../redux/slices/civilizations'
 import { Typography,CircularProgress } from '@material-ui/core'
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, CardActionArea, Typography,CardMedia,CardContent,CardActions,Button, Box } from '@material-ui/core';
+import { Card, Typography,CardMedia,CardContent,CardActions,Button, Box } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
