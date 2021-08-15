@@ -1,6 +1,7 @@
 .home-div-all{
     width: 100%;
-    height: 87vh;
+    height: fit-content;
+    min-height: 82vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,9 +10,10 @@
     background-size: cover;
     white-space: nowrap;
     padding-bottom: 40px;
+    padding-top: 40px;
 }
 .home-div-cards{
-    height: 100%;
+    height: 82vh;
     width: 50vw;
     overflow-y:scroll;
 }

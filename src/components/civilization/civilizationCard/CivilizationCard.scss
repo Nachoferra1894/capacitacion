@@ -1,6 +1,11 @@
 .civilizationpage-card{
     width: 50vw;
 }
+@media screen and (max-width: 768px) {
+    .civilizationpage-card{
+        width: 80vw;
+    }
+}
 .civilizationpage-media{
     height: 140;
     text-align: left;

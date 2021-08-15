@@ -1,7 +1,6 @@
 import React, { useEffect,useState } from 'react'
 import {useParams} from "react-router-dom";
 import { civilizationApi } from '../../api/civilizationApi';
-import './CivilizationPage.scss'
 import { CircularProgress, Typography } from '@material-ui/core';
 import MainNavbar from '../../components/mainNavbar/MainNavbar';
 import { CivilizationCard } from '../../components/civilization/civilizationCard/CivilizationCard';

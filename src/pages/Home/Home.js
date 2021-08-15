@@ -56,7 +56,7 @@ const Home = () => {
                         :
                         showCivilizations.length>0 ?
                             showCivilizations?.map((item,index)=>
-                                <ArmyCard item={item}/>
+                                <ArmyCard index={index} item={item}/>
                             )
                             :
                             <div style={{marginTop: '5%'}}>

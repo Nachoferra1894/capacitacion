@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Card, Typography,CardMedia,CardContent,CardActions,Button, Box } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
-
-export const CivilizationCard = ({civilization,loading}) => {
+import './CivilizationCard.scss'
+export const CivilizationCard = ({civilization}) => {
 
     const handleOpenCivilization = () => {
         window.open(`https://ageofempires.fandom.com/wiki/Civilizations_(Age_of_Empires_II)#${civilization.name}`)
@@ -41,15 +41,11 @@ export const CivilizationCard = ({civilization,loading}) => {
                             </Typography>
                             {rotate &&
                                 <Box style={{marginLeft: "2%"}}>
-                                    <Typography variant="subtitle1" color="textSecondary" component="p">
-                                        Expansion: {civilization.expansion}
-                                    </Typography>
-                                    <Typography variant="subtitle1" color="textSecondary" component="p">
-                                        Army type: {civilization.army_type}
-                                    </Typography>
-                                    <Typography variant="subtitle1" color="textSecondary" component="p">
-                                        Team bonus: {civilization.team_bonus}
-                                    </Typography>
+                                    {civilization.civilization_bonus.map((item,index)=>
+                                        <Typography variant="subtitle1" color="textSecondary" component="p">
+                                            {item}
+                                        </Typography>
+                                    )}
                                 </Box>
                             }
 

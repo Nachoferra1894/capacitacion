@@ -4,6 +4,11 @@
     opacity: 100%;
     margin-top: 5%;
 }
+.armycard-card:first-child{
+    margin-top: 0;
+}
+
+
 .armycard-content{
     display: flex;
     align-items: flex-start;

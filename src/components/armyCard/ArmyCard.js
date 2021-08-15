@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const ArmyCard = (props) => {
 
   const {
-    item
+    item,index
   } = props
 
   return (
