@@ -1,20 +1,16 @@
 
-
 import React from 'react';
 import {Link} from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import InputBase from '@material-ui/core/InputBase';
 import { alpha, makeStyles } from '@material-ui/core/styles';
-import SearchIcon from '../icons/Search';
-import Logo from '../img/Logo_hor.png'
-import MiniLogo from '../img/II.png'
+import SearchIcon from '../../icons/Search';
+import Logo from '../../img/Logo_hor.png'
+import MiniLogo from '../../img/II.png'
 import { useState ,useLayoutEffect} from 'react';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
   bar:{
     display: 'flex',
     justifyContent: 'space-between',
@@ -94,7 +90,7 @@ const MainNavbar = (props) => {
   }
 
   return (
-    <div className={classes.root}>
+    <div className="mainnavbar-root">
       <AppBar position="static">
         <Toolbar className={classes.bar}>
             <Link to='/'>
