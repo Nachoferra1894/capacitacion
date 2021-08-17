@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from 'react'
 import {useParams} from "react-router-dom";
+import {useQuery} from '../../hooks/useQuery'
 import { civilizationApi } from '../../api/civilizationApi';
 import { CircularProgress, Typography } from '@material-ui/core';
 import MainNavbar from '../../components/mainNavbar/MainNavbar';
@@ -7,7 +8,7 @@ import { CivilizationCard } from '../../components/civilization/civilizationCard
 
 
 const CivilizationPage = () => {
-    const params = useParams()
+    const query = useQuery()
     const [civilization, setCivilization] = useState({})
     const [loading, setloading] = useState(true)
 
@@ -15,9 +16,8 @@ const CivilizationPage = () => {
         setloading(true)
         async function getCivilization(){
             try {
-                const data = await civilizationApi.getCivilizationById(params.id)
+                const data = await civilizationApi.getCivilizationById(query.get("id"))
                 setCivilization(data)
-                console.log(data)
                 setloading(false)
             }
             catch (err){
@@ -27,7 +27,7 @@ const CivilizationPage = () => {
         }
         getCivilization()
 
-    },[params])
+    },[])
 
 
     return (

@@ -11,7 +11,7 @@ const App = () => {
           <Route exact path="/">
             <Home/>
           </Route> 
-          <Route path="/civilization/:id">
+          <Route path="/civilization">
             <CivilizationPage/>
           </Route> 
         </Switch>
