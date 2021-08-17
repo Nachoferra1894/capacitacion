@@ -3,8 +3,6 @@ import ArmyCard from '../../components/armyCard/ArmyCard'
 import { useEffect,useState } from 'react'
 import { civilizationApi } from '../../api/civilizationApi'
 import MainNavbar from '../../components/mainNavbar/MainNavbar'
-import {useDispatch } from 'react-redux'
-import {addCivilizations} from '../../redux/slices/civilizations'
 import { Typography,CircularProgress } from '@material-ui/core'
 
 const Home = () => {
@@ -12,14 +10,12 @@ const Home = () => {
     const [showCivilizations, setShowCivilizations] = useState([])
     const [search, setSearch] = useState("")
     const [loading, setLoading] = useState(true)
-    const dispatch = useDispatch()
 
     useEffect(()=>{
         async function getData (){
             setLoading(true)
             try {
                 const data = await civilizationApi.getCivilizations()
-                dispatch(addCivilizations(data.civilizations))
                 setCivilizations(data.civilizations)
                 setLoading(false)
             }

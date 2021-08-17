@@ -1,0 +1,14 @@
+.mainnavbar-grid-search{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin-left: 0;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    #grid-icon{
+        padding: 8px;
+    }
+}
+.mainnavbar-grid-search:hover{
+    background-color: rgba(255, 255, 255, 0.15),
+}
