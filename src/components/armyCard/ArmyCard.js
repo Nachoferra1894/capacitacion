@@ -18,7 +18,7 @@ const ArmyCard = (props) => {
   return (
     <Card className="armycard-card">
       <CardContent className="armycard-content">
-        <Link className="armycard-link" to={`civilization?id=${item.id}`}>
+        <Link className="armycard-link" to={`civilization/${item.id}`}>
           <Typography className="armycard-link"  variant='h3'>
               {item.name}
           </Typography>

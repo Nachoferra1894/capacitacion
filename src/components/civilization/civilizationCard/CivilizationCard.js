@@ -54,7 +54,7 @@ export const CivilizationCard = ({civilization}) => {
                 </CardContent>
                 <CardActions>
                     <Box className="civilizationpage-cardactions">
-                        <Button onClick={handleOpenCivilization} size="small" color="primary">
+                        <Button onClick={handleOpenCivilization} size="small" color="secondary">
                             Learn More
                         </Button>
                     </Box>

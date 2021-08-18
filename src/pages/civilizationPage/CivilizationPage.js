@@ -7,7 +7,7 @@ import { CivilizationCard } from '../../components/civilization/civilizationCard
 
 
 const CivilizationPage = () => {
-    const params = useParams()
+    const {id} = useParams()
     const [civilization, setCivilization] = useState({})
     const [loading, setloading] = useState(true)
 
@@ -15,7 +15,8 @@ const CivilizationPage = () => {
         setloading(true)
         async function getCivilization(){
             try {
-                const data = await civilizationApi.getCivilizationById(params.id)
+                console.log(id)
+                const data = await civilizationApi.getCivilizationById(id)
                 setCivilization(data)
                 setloading(false)
             }
