@@ -34,7 +34,7 @@ export const CivilizationCard = ({civilization}) => {
                         <Typography variant="subtitle1" color="textSecondary" component="p">
                             Team bonus: {civilization.team_bonus}
                         </Typography>
-                        <Box style={{cursor: "pointer"}} onClick={e=>setRotate(!rotate)}>
+                        <Box id='civilization-card-show-more' style={{cursor: "pointer"}} onClick={e=>setRotate(!rotate)}>
                             <Typography variant="subtitle1" color="textSecondary" component="p">
                                 Civilization bonus:
                                 <FontAwesomeIcon className={`civilizationpage-icon ${rotate}`} icon={faChevronRight}/>
@@ -54,7 +54,7 @@ export const CivilizationCard = ({civilization}) => {
                 </CardContent>
                 <CardActions>
                     <Box className="civilizationpage-cardactions">
-                        <Button onClick={handleOpenCivilization} size="small" color="secondary">
+                        <Button id='civilization-card-learn-more' onClick={handleOpenCivilization} size="small" color="secondary">
                             Learn More
                         </Button>
                     </Box>

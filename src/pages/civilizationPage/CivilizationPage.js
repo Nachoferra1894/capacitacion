@@ -15,14 +15,14 @@ const CivilizationPage = () => {
         setloading(true)
         async function getCivilization(){
             try {
-                console.log(id)
                 const data = await civilizationApi.getCivilizationById(id)
-                setCivilization(data)
+                data ? setCivilization(data) : setCivilization(null)
                 setloading(false)
             }
             catch (err){
                 console.log(err)
                 setloading(false)
+                setCivilization(null)
             }
         }
         getCivilization()
@@ -31,18 +31,18 @@ const CivilizationPage = () => {
 
     return (
         <div>
-        <MainNavbar/>
-        <div className="home-div-all">
-            {
-                loading ? 
-                    <CircularProgress color="secondary"/>
-                    :
-                    civilization ?
-                        <CivilizationCard civilization={civilization}/>
+            <MainNavbar/>
+            <div className="home-div-all">
+                {
+                    loading ? 
+                        <CircularProgress color="secondary"/>
                         :
-                        <Typography variant='h3'>Couldn't connect to server</Typography>
-            }
-        </div>
+                        civilization ?
+                            <CivilizationCard civilization={civilization}/>
+                            :
+                            <Typography variant='h3'>Couldn't find the civilization</Typography>
+                }
+            </div>
     </div>
     )
 }

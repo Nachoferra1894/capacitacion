@@ -49,6 +49,8 @@
     ]
   },
   "devDependencies": {
-    "@types/cors": "^2.8.12"
+    "@types/cors": "^2.8.12",
+    "cypress": "^9.7.0",
+    "eslint-plugin-cypress": "^2.12.1"
   }
 }

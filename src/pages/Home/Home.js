@@ -47,10 +47,10 @@ const Home = () => {
                     {
                         loading ? 
                             <div style={{marginTop: '5%'}}>
-                                <CircularProgress color="secondary"/>
+                                <CircularProgress id='home-circular-progress' color="secondary"/>
                             </div>
                         :
-                        showCivilizations.length>0 ?
+                        showCivilizations?.length>0 ?
                             showCivilizations?.map((item,index)=>
                                 <ArmyCard index={index} item={item}/>
                             )

@@ -58,7 +58,7 @@ const MainNavbar = (props) => {
   }
 
   return (
-      <AppBar position="static">
+      <AppBar id='navbar-main-container' position="static">
         <Toolbar className={classes.bar}>
             <Link to='/'>
               <img alt="Age of empires logo" height="40px" width="auto" style={{marginRight: '8px'}} src={width>600 ? Logo:MiniLogo}/>
@@ -76,6 +76,7 @@ const MainNavbar = (props) => {
                   root: classes.inputRoot,
                   input: classes.inputInput,
                 }}
+                id='navbar-search-input'
                 onChange={e=>handleSearch(e.target.value)}
               />
             </>
